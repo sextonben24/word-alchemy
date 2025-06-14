@@ -1,7 +1,10 @@
-const dictionary = new Set([
-  "burn", "born", "boon", "cool", "corn", "curl", "cork", "curb", "burl", "turn",
-  "bunk", "bank", "bark", "barn", "bull", "call", "ball", "cook", "book", "look"
-]);
+let dictionary = new Set();
+
+fetch('words4.json')
+  .then(response => response.json())
+  .then(data => {
+    dictionary = new Set(data);
+  });
 
 const startWord = "BURN";
 const endWord = "COOL";
